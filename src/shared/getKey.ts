@@ -3,8 +3,13 @@ export default function getKey(input: HTMLInputElement | HTMLSelectElement) {
     input.id ||
     (input.type == "checkbox" ? input.value : null) ||
     input.name ||
-    (
-      input.getBoundingClientRect().top + input.getBoundingClientRect().left
-    ).toString()
+    getCoords(input)
   );
+}
+
+function getCoords(elem: HTMLElement) {
+  let box = elem.getBoundingClientRect();
+  let top = (box.top + window.scrollY).toString();
+  let left = (box.left + window.scrollX).toString();
+  return top + left;
 }

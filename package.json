@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "esbuild src/index.ts  --bundle --minify --target=chrome58,firefox57,safari11,edge16 --outfile=build/index.js && node src/scripts/build.js",
+    "build": "esbuild src/index.ts --bundle --minify --target=chrome58,firefox57,safari11,edge16 --outfile=build/index.js && node src/scripts/build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

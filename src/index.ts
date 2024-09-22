@@ -1,6 +1,6 @@
 import { checkbox, selectOne, selectMultiple, text } from "./components";
 
-const inputs: any = document.querySelectorAll("input, select");
+const inputs: any = document.querySelectorAll("input, select, textarea");
 
 for (let i = 0; i < inputs.length; i++) {
   let skip = checkbox(inputs[i]);
