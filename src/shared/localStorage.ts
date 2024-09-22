@@ -8,11 +8,13 @@ class LocalStorage {
   }
 
   get(key: string) {
-    let value = localStorage.getItem(key);
+    let value: any = localStorage.getItem(key);
     if (!value) return null;
     if (value.startsWith("{") || value.startsWith("[")) {
       value = JSON.parse(value);
     }
+    if (value == "true") value = true;
+    if (value == "false") value = false;
     return value;
   }
 }

@@ -1,4 +1,5 @@
-import LS from "./localStorage";
+import { LS, getKey } from "../shared";
+
 // if return true then for cicle will continue
 export default function checkbox(
   input: HTMLInputElement,
@@ -8,11 +9,10 @@ export default function checkbox(
   if (!types.includes(input.type)) return false;
 
   if (set) {
-    LS.set(input.id || input.name, input.checked);
+    LS.set(getKey(input), input.checked);
   } else {
-    let value = LS.get(input.id || input.name);
-    if (!value) return true;
-    input.checked = Boolean(value);
+    let value = LS.get(getKey(input));
+    input.checked = value;
   }
   return true;
 }

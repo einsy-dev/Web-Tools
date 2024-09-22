@@ -1,7 +1,4 @@
-import checkbox from "./checkbox";
-import selectMultiple from "./selectMultiple";
-import selectOne from "./selectOne";
-import text from "./text";
+import { checkbox, selectOne, selectMultiple, text } from "./components";
 
 const inputs: any = document.querySelectorAll("input, select");
 
