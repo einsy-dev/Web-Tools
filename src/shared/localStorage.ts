@@ -13,8 +13,8 @@ class LocalStorage {
     if (value.startsWith("{") || value.startsWith("[")) {
       value = JSON.parse(value);
     }
-    if (value == "true") value = true;
-    if (value == "false") value = false;
+    if (value === "true") value = true;
+    if (value === "false") value = false;
     return value;
   }
 }
