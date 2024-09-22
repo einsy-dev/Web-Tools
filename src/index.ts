@@ -6,7 +6,6 @@ import text from "./text";
 const inputs: any = document.querySelectorAll("input, select");
 
 for (let i = 0; i < inputs.length; i++) {
-  if (inputs[i].type == "submit" || inputs[i].type == "hidden") continue;
   let skip = checkbox(inputs[i]);
   if (skip) continue;
   skip = selectOne(inputs[i]);

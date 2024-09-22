@@ -10,7 +10,10 @@ class LocalStorage {
   get(key: string) {
     let value = localStorage.getItem(key);
     if (!value) return null;
-    return JSON.parse(value);
+    if (value.startsWith("{") || value.startsWith("[")) {
+      value = JSON.parse(value);
+    }
+    return value;
   }
 }
 
