@@ -13,15 +13,18 @@ export default function selectMultiple(
   if (set) {
     LS.set(
       input.id,
-      JSON.stringify(
-        [...(input.selectedOptions as any)].map((option) => option.value)
-      )
+      children.filter((option) => option.selected).map((option) => option.value)
     );
-  }
-  for (let i = 0; i < children.length; i++) {
-    if (JSON.parse(LS.get(input.id) || "[]").includes(children[i].value)) {
-      children[i].selected = true;
-    }
+  } else {
+    let value = LS.get(input.id || input.name);
+    if (!value) return true;
+    children.forEach((option) => {
+      if (value.includes(option.value)) {
+        option.selected = true;
+      } else {
+        option.selected = false;
+      }
+    });
   }
 
   return true;

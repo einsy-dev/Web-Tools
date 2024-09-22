@@ -8,9 +8,9 @@ export default function checkbox(
   if (!types.includes(input.type)) return false;
 
   if (set) {
-    LS.set(input.id, input.checked);
+    LS.set(input.id || input.name, input.checked);
   } else {
-    let value = LS.get(input.id);
+    let value = LS.get(input.id || input.name);
     if (!value) return true;
     input.checked = Boolean(value);
   }

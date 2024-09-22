@@ -10,15 +10,21 @@ export default function selectOne(
     input.children
   ) as HTMLOptionElement[];
   if (!children.length) return true;
-  for (let i = 0; i < children.length; i++) {
-    if (set) {
-      if (!children[i].selected) continue;
-      LS.set(input.id, children[i].value);
-    } else {
-      if (children[i].value == LS.get(input.id)) {
-        children[i].selected = true;
+
+  if (set) {
+    let selected = children
+      .filter((option) => option.selected)
+      .map((option) => option.value);
+    if (!selected.length) return true;
+    LS.set(input.id, selected);
+  } else {
+    children.forEach((option) => {
+      if (LS.get(input.id)?.includes(option.value)) {
+        option.selected = true;
+      } else {
+        option.selected = false;
       }
-    }
+    });
   }
 
   return true;
