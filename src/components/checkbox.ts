@@ -12,7 +12,7 @@ export default function checkbox(
     LS.set(getKey(input), input.checked);
   } else {
     let value = LS.get(getKey(input));
-    input.checked = value;
+    if (value) input.click();
   }
   return true;
 }

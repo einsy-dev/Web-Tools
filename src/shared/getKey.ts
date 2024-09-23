@@ -1,7 +1,7 @@
 export default function getKey(input: HTMLInputElement | HTMLSelectElement) {
   return (
     input.id ||
-    (input.type == "checkbox" ? input.value : null) ||
+    (input.type == "checkbox" || input.type == "radio" ? input.value : null) ||
     input.name ||
     getCoords(input)
   );
