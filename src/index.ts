@@ -1,4 +1,4 @@
-import { checkbox, selectOne, selectMultiple, text } from "./components";
+import { checkbox, text } from "./components";
 
 const inputs: any = document.querySelectorAll("input, select, textarea");
 
@@ -7,13 +7,8 @@ document.addEventListener("keydown", function (event: KeyboardEvent) {
     for (let i = 0; i < inputs.length; i++) {
       let skip = checkbox(inputs[i]);
       if (skip) continue;
-      skip = selectOne(inputs[i]);
-      if (skip) continue;
-      skip = selectMultiple(inputs[i]);
-      if (skip) continue;
       skip = text(inputs[i]);
     }
-    console.log("event", event);
   }
 });
 
@@ -23,7 +18,7 @@ document.addEventListener("keydown", function (event: KeyboardEvent) {
   }
 });
 
-document.addEventListener("change", function (event: any) {
+document.addEventListener("input", function (event: any) {
   handleChange(event);
 });
 document.addEventListener("click", function (event: any) {
@@ -37,10 +32,6 @@ function handleClick(event: Event) {
 }
 
 function handleChange(event: any) {
-  let skip = selectOne(event.target, true);
-  if (skip) return;
-  skip = selectMultiple(event.target, true);
-  if (skip) return;
-  skip = text(event.target, true);
+  let skip = text(event.target, true);
   if (skip) return;
 }
