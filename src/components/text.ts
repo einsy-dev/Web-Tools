@@ -1,4 +1,4 @@
-import { LS, getKey } from "../shared";
+import { DM, getKey } from "../shared";
 
 // if return true then for cicle will continue
 export default function text(input: HTMLInputElement, set: boolean = false) {
@@ -14,9 +14,9 @@ export default function text(input: HTMLInputElement, set: boolean = false) {
   ];
   if (!types.includes(input.type)) return false;
   if (set) {
-    LS.set(getKey(input), input.value);
+    DM.set(getKey(input), input.value);
   } else {
-    let value = LS.get(getKey(input));
+    let value = DM.get(getKey(input));
     if (!value) return true;
     input.value = value;
   }

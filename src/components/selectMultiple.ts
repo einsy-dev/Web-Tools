@@ -1,4 +1,4 @@
-import { LS, getKey } from "../shared";
+import { DM, getKey } from "../shared";
 
 // if return true then for cicle will continue
 export default function selectMultiple(
@@ -12,12 +12,12 @@ export default function selectMultiple(
   ) as HTMLOptionElement[];
   if (!children.length) return true;
   if (set) {
-    LS.set(
+    DM.set(
       getKey(input),
       children.filter((option) => option.selected).map((option) => option.value)
     );
   } else {
-    let value = LS.get(getKey(input));
+    let value = DM.get(getKey(input));
     if (!value) return true;
     children.forEach((option) => {
       if (value.includes(option.value)) {

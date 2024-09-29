@@ -1,4 +1,4 @@
-import { LS, getKey } from "../shared";
+import { DM, getKey } from "../shared";
 
 // if return true then for cicle will continue
 export default function checkbox(
@@ -9,9 +9,9 @@ export default function checkbox(
   if (!types.includes(input.type)) return false;
 
   if (set) {
-    LS.set(getKey(input), input.checked);
+    DM.set(getKey(input), input.checked);
   } else {
-    let value = LS.get(getKey(input));
+    let value = DM.get(getKey(input));
     if (value) input.click();
   }
   return true;

@@ -1,4 +1,4 @@
-import { LS, getKey } from "../shared";
+import { DM, getKey } from "../shared";
 
 // if return true then for cicle will continue
 export default function selectOne(
@@ -17,15 +17,13 @@ export default function selectOne(
       .filter((option) => option.selected)
       .map((option) => option.value);
     if (!selected.length) return true;
-    LS.set(getKey(input), selected);
+    DM.set(getKey(input), selected);
   } else {
     children.forEach((option) => {
-      let value = LS.get(getKey(input));
+      let value = DM.get(getKey(input));
       if (!value || !value.length) return true;
       if (value.includes(option.value)) {
         option.selected = true;
-      } else {
-        option.selected = false;
       }
     });
   }
