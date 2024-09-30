@@ -12,7 +12,7 @@ export default function checkbox(
     DM.set(getKey(input), input.checked);
   } else {
     let value = DM.get(getKey(input));
-    if (value) input.click();
+    if (value && value != input.checked) input.click();
   }
   return true;
 }
