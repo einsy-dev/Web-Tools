@@ -1,18 +1,38 @@
 {
-  "name": "chrome-ext",
+  "name": "web-tools",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "esbuild src/index.ts --bundle --minify --target=chrome58,firefox57,safari11,edge16 --outfile=build/index.js && node scripts/build.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsup"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "chrome",
+    "extension",
+    "tools",
+    "web-tools"
+  ],
+  "author": "Einsy",
   "license": "ISC",
-  "description": "",
+  "description": "Useful tools pack",
   "devDependencies": {
     "@types/node": "~20.14.10",
-    "esbuild": "~0.23.0",
-    "typescript": "~5.5.3"
-  }
+    "typescript": "~5.5.3",
+    "tsup": "^8.3.5"
+  },
+  "dependencies": {
+    "undici-types": "^5.26.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/einsy-dev/Chrome-Ext.git"
+  },
+  "bugs": {
+    "url": "https://github.com/einsy-dev/Chrome-Ext/issues"
+  },
+  "homepage": "https://github.com/einsy-dev/Chrome-Ext#readme"
 }
