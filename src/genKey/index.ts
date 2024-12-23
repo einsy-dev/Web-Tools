@@ -1,3 +1,5 @@
+import findElement from "../findElement";
+
 export default function genKey(input: HTMLInputElement | HTMLSelectElement) {
   return (
     input.id ||
@@ -5,13 +7,6 @@ export default function genKey(input: HTMLInputElement | HTMLSelectElement) {
       ? input.type + input.name + input.value
       : null) ||
     input.name ||
-    getCoords(input)
+    findElement(input, (el) => el.innerText, { upLimit: 3 }).innerText
   );
-}
-
-function getCoords(elem: HTMLElement) {
-  let box = elem.getBoundingClientRect();
-  let top = (box.top + window.scrollY).toString();
-  let left = (box.left + window.scrollX).toString();
-  return top + left;
 }

@@ -11,29 +11,31 @@ const defaultData: dataI = {
 export default function findElement(
   el: HTMLElement | Element | null,
   fn: (element: any) => boolean,
-  data: dataI
+  data: dataI = {}
 ): any {
-  if (!el) throw new Error("No element provided to findElement()");
-  if (!fn) throw new Error("No function provided to findElement()");
-  Object.assign(data, defaultData);
-
-  if (fn(el)) data.result!.push(el);
-  if (el.children.length && data.all) {
-    for (let i = 0; i < el.children.length; i++) {
-      if (data.index && i == data.index) continue;
-      findElement(el.children[i], fn, data);
+  let defaultData = {
+    upLimit: 0,
+    all: false,
+    result: []
+  };
+  data = Object.assign({}, defaultData, data);
+  if (fn(el)) {
+    data.result!.push(el!);
+  } else if (el!.children.length) {
+    for (let i = 0; i < el!.children.length; i++) {
+      findElement(el!.children[i], fn, data);
+      if (data.result!.length && !data.all) break;
     }
   }
-
-  if (data.upLimit! > 0 && el.parentElement) {
-    data.result = findElement(el.parentElement, fn, {
-      upLimit: --data.upLimit!,
-      index: findIndex(el.parentElement.children, el)
-    });
+  if ((!data.result!.length || data.all) && data.upLimit) {
+    --data.upLimit;
+    findElement(el!.parentElement, fn, data);
   }
+
+  return data.result!.length <= 1 ? data.result![0] : data.result;
 }
 
-function findIndex(
+export function findIndex(
   array: HTMLCollectionOf<HTMLElement | Element>,
   elem: HTMLElement | Element
 ): number {
