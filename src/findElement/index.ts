@@ -3,20 +3,15 @@ import { dataI } from "./interface";
 const defaultData: dataI = {
   all: false,
   upLimit: 0,
-  downLimit: null,
   index: null,
-  result: [],
+  result: []
 };
 
-export default function findElement(
-  el: HTMLElement | Element | null,
-  fn: (element: any) => boolean,
-  data: dataI = {},
-): any {
+export default function findElement(el: HTMLElement | Element | null, fn: (element: any) => boolean, data: dataI = {}): any {
   let defaultData = {
     upLimit: 0,
     all: false,
-    result: [],
+    result: []
   };
   data = Object.assign({}, defaultData, data);
   if (fn(el)) {
@@ -35,9 +30,6 @@ export default function findElement(
   return data.result!.length <= 1 ? data.result![0] : data.result;
 }
 
-export function findIndex(
-  array: HTMLCollectionOf<HTMLElement | Element>,
-  elem: HTMLElement | Element,
-): number {
+export function findIndex(array: HTMLCollectionOf<HTMLElement | Element>, elem: HTMLElement | Element): number {
   return Array.prototype.indexOf.call(array, elem);
 }

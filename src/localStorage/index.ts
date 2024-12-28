@@ -22,7 +22,6 @@ class DataManager {
   clear() {
     localStorage.clear(); // clear localStorage
     for (let key in this) {
-      // clear this
       delete this[key];
     }
   }
