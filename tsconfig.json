@@ -3,7 +3,6 @@
     "target": "es2016",
     "lib": ["es6", "dom"],
     "module": "AMD",
-    "rootDir": "src",
     "moduleResolution": "node",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
