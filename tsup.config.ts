@@ -9,7 +9,7 @@ export default defineConfig({
   ],
   format: ["cjs", "esm"], // Build for commonJS and ESmodules
   dts: true, // Generate declaration file (.d.ts)
-  minify: false, // Disable minification 
+  minify: true, // Disable minification 
   splitting: false, 
   sourcemap: true,
   clean: true
