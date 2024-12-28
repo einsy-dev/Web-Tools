@@ -5,18 +5,18 @@ const defaultData: dataI = {
   upLimit: 0,
   downLimit: null,
   index: null,
-  result: []
+  result: [],
 };
 
 export default function findElement(
   el: HTMLElement | Element | null,
   fn: (element: any) => boolean,
-  data: dataI = {}
+  data: dataI = {},
 ): any {
   let defaultData = {
     upLimit: 0,
     all: false,
-    result: []
+    result: [],
   };
   data = Object.assign({}, defaultData, data);
   if (fn(el)) {
@@ -37,7 +37,7 @@ export default function findElement(
 
 export function findIndex(
   array: HTMLCollectionOf<HTMLElement | Element>,
-  elem: HTMLElement | Element
+  elem: HTMLElement | Element,
 ): number {
   return Array.prototype.indexOf.call(array, elem);
 }
