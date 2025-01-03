@@ -2,9 +2,30 @@
   "name": "@einsy.dev/web-tools",
   "displayName": "Web Tools",
   "version": "1.0.2",
-  "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./findElement": {
+      "import": "./dist/findElement/index.mjs",
+      "require": "./dist/findElement/index.cjs"
+    },
+    "./genKey": {
+      "import": "./dist/genKey/index.mjs",
+      "require": "./dist/genKey/index.cjs"
+    },
+    "./LS": {
+      "import": "./dist/localStorage/index.mjs",
+      "require": "./dist/localStorage/index.cjs"
+    },
+    "./pathname": {
+      "import": "./dist/pathName/index.mjs",
+      "require": "./dist/pathName/index.cjs"
+    },
+  },
   "files": [
     "dist"
   ],
