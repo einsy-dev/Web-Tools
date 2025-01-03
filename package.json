@@ -24,7 +24,7 @@
     "./pathname": {
       "import": "./dist/pathName/index.mjs",
       "require": "./dist/pathName/index.cjs"
-    },
+    }
   },
   "files": [
     "dist"
