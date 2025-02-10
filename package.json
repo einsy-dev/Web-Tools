@@ -1,6 +1,6 @@
 {
   "name": "@einsy.dev/web-tools",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Useful tools pack",
   "main": "dist/index.js",
   "type": "module",
