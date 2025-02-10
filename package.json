@@ -1,34 +1,8 @@
 {
   "name": "@einsy.dev/web-tools",
-  "displayName": "Web Tools",
   "version": "1.0.3",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
-    },
-    "./findElement": {
-      "import": "./dist/findElement/index.mjs",
-      "require": "./dist/findElement/index.cjs"
-    },
-    "./genKey": {
-      "import": "./dist/genKey/index.mjs",
-      "require": "./dist/genKey/index.cjs"
-    },
-    "./LS": {
-      "import": "./dist/localStorage/index.mjs",
-      "require": "./dist/localStorage/index.cjs"
-    },
-    "./pathname": {
-      "import": "./dist/pathName/index.mjs",
-      "require": "./dist/pathName/index.cjs"
-    }
-  },
-  "files": [
-    "dist"
-  ],
+  "description": "Useful tools pack",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsup"
   },
@@ -38,9 +12,11 @@
     "tools",
     "web-tools"
   ],
-  "author": "Einsy",
+  "author": "einsy-dev",
   "license": "ISC",
-  "description": "Useful tools pack",
+  "files": [
+    "dist/*"
+  ],
   "devDependencies": {
     "@types/node": "~20.14.10",
     "tsup": "^8.3.5",
@@ -48,13 +24,5 @@
   },
   "dependencies": {
     "undici-types": "^5.26.5"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/einsy-dev/Chrome-Ext.git"
-  },
-  "bugs": {
-    "url": "https://github.com/einsy-dev/Chrome-Ext/issues"
-  },
-  "homepage": "https://github.com/einsy-dev/Chrome-Ext#readme"
+  }
 }
