@@ -1,11 +1,11 @@
 {
   "name": "@einsy.dev/web-tools",
-  "version": "1.0.10",
+  "version": "1.0.7",
   "description": "Useful tools pack",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "tsc && tsup",
+    "build": "tsc && tsup && node ./build.js",
     "patch": "npm version patch",
     "minor": "npm version minor",
     "major": "npm version major",
