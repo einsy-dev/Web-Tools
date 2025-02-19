@@ -3,3 +3,4 @@ src/
 *.log
 *.tmp
 *.bak
+build.js

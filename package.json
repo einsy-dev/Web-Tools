@@ -2,11 +2,11 @@
   "name": "@einsy.dev/web-tools",
   "version": "1.0.5",
   "description": "Useful tools pack",
-  "main": "dist/index.js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
     "lint": "tsc",
-    "build": "npm run lint && tsup"
+    "build": "npm run lint && tsup && node build.js"
   },
   "keywords": [
     "chrome",
@@ -17,29 +17,29 @@
   "author": "einsy-dev",
   "license": "ISC",
   "files": [
-    "dist/*"
+    "./*"
   ],
   "exports": {
     "./package.json": "./package.json",
     ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
+      "import": "./index.mjs",
+      "require": "./index.cjs"
     },
     "./findElement": {
-      "import": "./dist/findElement/index.mjs",
-      "require": "./dist/findElement/index.cjs"
+      "import": "./findElement/index.mjs",
+      "require": "./findElement/index.cjs"
     },
     "./genKey": {
-      "import": "./dist/genKey/index.mjs",
-      "require": "./dist/genKey/index.cjs"
+      "import": "./genKey/index.mjs",
+      "require": "./genKey/index.cjs"
     },
     "./LS": {
-      "import": "./dist/localStorage/index.mjs",
-      "require": "./dist/localStorage/index.cjs"
+      "import": "./localStorage/index.mjs",
+      "require": "./localStorage/index.cjs"
     },
     "./pathname": {
-      "import": "./dist/pathName/index.mjs",
-      "require": "./dist/pathName/index.cjs"
+      "import": "./pathName/index.mjs",
+      "require": "./pathName/index.cjs"
     }
   },
   "devDependencies": {
