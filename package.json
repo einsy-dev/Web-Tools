@@ -20,7 +20,7 @@
   "author": "einsy-dev",
   "license": "ISC",
   "files": [
-    "*"
+    "./dist/**/*"
   ],
   "exports": {
     "./package.json": "./package.json",
