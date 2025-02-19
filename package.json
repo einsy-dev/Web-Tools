@@ -9,7 +9,7 @@
     "patch": "npm version patch",
     "minor": "npm version minor",
     "major": "npm version major",
-    "publish": "npm run build && npm publish"
+    "publish": "npm run build && npm publish --files ./dist"
   },
   "keywords": [
     "chrome",
@@ -20,28 +20,20 @@
   "author": "einsy-dev",
   "license": "ISC",
   "files": [
-    "./*"
+    "*"
   ],
   "exports": {
     "./package.json": "./package.json",
     ".": {
-      "import": "./index.mjs",
+      "import": "./index.js",
       "require": "./index.cjs"
     },
-    "./findElement": {
-      "import": "./findElement/index.mjs",
-      "require": "./findElement/index.cjs"
-    },
-    "./genKey": {
-      "import": "./genKey/index.mjs",
-      "require": "./genKey/index.cjs"
-    },
     "./LS": {
-      "import": "./localStorage/index.mjs",
+      "import": "./localStorage/index.js",
       "require": "./localStorage/index.cjs"
     },
     "./pathname": {
-      "import": "./pathName/index.mjs",
+      "import": "./pathName/index.js",
       "require": "./pathName/index.cjs"
     }
   },
