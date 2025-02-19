@@ -5,8 +5,11 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "lint": "tsc",
-    "build": "npm run lint && tsup && node build.js"
+    "build": "tsc && tsup && node ./build.js",
+    "patch": "npm version patch",
+    "minor": "npm version minor",
+    "major": "npm version major",
+    "publish": "npm run build && npm publish"
   },
   "keywords": [
     "chrome",
