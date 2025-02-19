@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "tsc && tsup && node ./build.js",
+    "build": "tsc && tsup",
     "patch": "npm version patch",
     "minor": "npm version minor",
     "major": "npm version major",
@@ -19,9 +19,6 @@
   ],
   "author": "einsy-dev",
   "license": "ISC",
-  "files": [
-    "./dist/**/*"
-  ],
   "exports": {
     "./package.json": "./package.json",
     ".": {
