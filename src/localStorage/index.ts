@@ -10,8 +10,17 @@ class DataManager {
     localStorage.setItem("data", JSON.stringify(this));
   }
 
+  setAll(data: { [key: string]: any }) {
+    localStorage.setItem("data", JSON.stringify(data));
+    this.refresh();
+  }
+
   get(key: string) {
     return this[key];
+  }
+
+  getAll() {
+    return this;
   }
 
   refresh() {
