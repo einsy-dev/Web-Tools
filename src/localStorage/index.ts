@@ -1,12 +1,12 @@
 class DataManager {
-  [key: string]: any;
+  data: { [key: string]: any } = {};
 
   constructor() {
     this.refresh();
   }
 
   set(key: string, value: any) {
-    this[key] = value;
+    this.data[key] = value;
     localStorage.setItem("data", JSON.stringify(this));
   }
 
@@ -16,23 +16,21 @@ class DataManager {
   }
 
   get(key: string) {
-    return this[key];
+    return this.data[key];
   }
 
   getAll() {
-    return this;
+    return this.data;
   }
 
   refresh() {
     const data = JSON.parse(localStorage.getItem("data") || "{}");
-    Object.assign(this, data);
+    this.data = data;
   }
 
   clear() {
     localStorage.clear(); // clear localStorage
-    for (let key in this) {
-      delete this[key];
-    }
+    this.data = {};
   }
 }
 
